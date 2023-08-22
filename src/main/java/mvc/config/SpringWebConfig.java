@@ -19,6 +19,7 @@ import org.thymeleaf.templatemode.TemplateMode;
 import mvc.music_player.MusicPlayer;
 import mvc.music_player.PopMusic;
 import mvc.music_player.RockMusic;
+import mvc.dao.SongDAO;
 import mvc.music_player.ClassicalMusic;
 import mvc.music_player.Music;
 import mvc.music_player.MusicGenres;
@@ -37,8 +38,8 @@ public class SpringWebConfig implements WebMvcConfigurer {
 	// Spring + Thymeleaf need this
 	@Override
 	public void addResourceHandlers(final ResourceHandlerRegistry registry) {
-		registry.addResourceHandler("/css/**").addResourceLocations("/resources/core/css/");
-		registry.addResourceHandler("/js/**").addResourceLocations("/resources/core/js/");
+		registry.addResourceHandler("/css/**").addResourceLocations("/resources/css/");
+		registry.addResourceHandler("/js/**").addResourceLocations("/resources/js/");
 		registry.addResourceHandler("/webjars/**").addResourceLocations("/webjars/");
 	}
 
@@ -95,5 +96,10 @@ public class SpringWebConfig implements WebMvcConfigurer {
 	@Bean
 	public MusicPlayer musicPlayer(List<Music> genres) {
 		return new MusicPlayer(genres);
+	}
+	
+	@Bean
+	public SongDAO songDAO() {
+		return new SongDAO();
 	}
 }

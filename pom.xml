@@ -90,7 +90,7 @@
 				</configuration>
 			</plugin>
 
-			<!--<plugin>
+			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>9.4.45.v20220203</version>
@@ -100,7 +100,7 @@
 						<contextPath>/spring-mvc</contextPath>
 					</webApp>
 				</configuration>
-			</plugin>-->
+			</plugin>
 
 		</plugins>
 	</build>

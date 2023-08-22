@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<title>Spring Web MVC Music</title>
+	<!-- Boostrap core css -->
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}" />
+	<!-- custom style -->
+	<link rel="stylesheet" th:href="@{/css/main.css}" />
+</head>
+
+<body>
+	<h3><span th:text="'Calculator request to ' + ${o} + ' ' + ${a} + ' and ' + ${b} + ' ...calculating...'"></span></h3>
+	<br>
+	<h3><span th:text="'The result of your request: ' + ${result}"></span></h3>
+</body>
+
+</html>
