@@ -5,8 +5,8 @@ mvc\music_player\ClassicalMusic.class
 mvc\music_player\PopMusic.class
 mvc\music_player\MusicGenres.class
 mvc\config\SpringWebConfig.class
+mvc\config\WebXmlServletInitializer.class
 mvc\music_player\Music.class
 mvc\models\Song.class
-mvc\config\MyServletInitializer.class
 mvc\music_player\MusicPlayer.class
 mvc\music_player\RockMusic.class

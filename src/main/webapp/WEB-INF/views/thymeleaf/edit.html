@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<title>Spring MVC Song</title>
+	<title>EDIT Song</title>
 	<!-- Boostrap core css -->
 	<link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.0/css/bootstrap.min.css}" />
 	<!-- custom style -->
@@ -17,23 +17,16 @@
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
 		<a class="navbar-brand" href="#">Wetal.com</a>
 	</nav>
+	<br><br><br>
 
-	<div class="starter-template">
+	<form method="POST" th:action="@{/songs/update/{id}(id=${song.getId()})}" th:object="${song}">
+		<input type="hidden" name="_method" value="PATCH" />
+		<label for="title">Modify song title: </label>
+		<input type="text" id="title" th:field="*{title}" />
+		<div style="color:red;" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">Validation Error</div>
 		<br>
-		<br>
-		<h1>Music Player</h1>
-		<div>
-			<h3 th:text="${songById.getId()}">id</h3>
-			<h3 th:text="${songById.getTitle()}">title</h3>
-		</div>
-		<div>
-			<a th:href="@{/songs/edit/{id}(id=${songById.getId()})}">EDIT</a>
-		</div>
-		<form th:method="POST" th:action="@{/songs/delete/{id}(id=${songById.getId()})}">
-			<input type="hidden" name="_method" value="DELETE" />
-			<input type="submit" value="DELETE" />
-		</form>
-	</div>
+		<input type="submit" value="Update..." />
+	</form>
 
 	<!-- Boostrap core js -->
 	<script type="text/javascript" th:src="@{webjars/bootstrap/5.2.0/js/bootstrap.min.js}"></script>
